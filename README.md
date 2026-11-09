@@ -107,9 +107,10 @@ and are not duplicated here. The perturbed trees of the NNI analysis are in `res
   original value are listed in `trees/unmatched.csv` with their recomputed scores.
 * **Random trees** are fully reproducible (`random.seed(r)`, $r = 0, \ldots, 4$).
 * **Calibration, $\varepsilon$.** The cutoff printed as 0.67 in Tables S1 to S4 is $2/3$ exactly.
-* **Rounding in Table S1.** The script gives BA(0.05) $= 0.57$ for $n = 500$, $k = 15$
-  (published 0.58; exact value 0.5749) and median cPHS $1.9 \times 10^{-2}$ for $n = 100$, $k = 25$
-  (published $2.0 \times 10^{-2}$).
+* **Rounding in Tables S1 to S4.** The published values were rounded by hand from three-decimal
+  output, so `calibration/tables_S1_S4.py` differs from them in a few cells by 0.01 in balanced
+  accuracy or by one unit in the last digit of the median cPHS (for example, BA(0.05) $= 0.57$ for
+  $n = 500$, $k = 15$ in Table S1, published as 0.58; exact value 0.5749).
 * **Table S10** uses the uniform threshold $t = 0.05$ and the 48 low-$q$ tumors of the earlier
   71-tumor cohort (all tumors in `merged_all_tumors.csv` except three, with $k \geq 7$ and $q < 0.35$).
 * **Script versions.** Scripts are deposited as they were run; the only later change is replacing

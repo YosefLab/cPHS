@@ -34,6 +34,8 @@ def candidates(n, k, m, rho):
         c.append(f"threshold_n{n}_k{k}_m{m}.csv")
     c.append(f"threshold_n{n}_k{k}_m{m}_rho{r}.csv")
     if m == 50:
+        c.append(f"threshold_n{n}_k{k}_rho{r}.csv")
+    if m == 50:
         c.append(f"log_n{n}_k{k}_rho{r}.csv")
     return [f for f in c if os.path.exists(os.path.join(RES, f))]
 
