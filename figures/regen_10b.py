@@ -8,6 +8,7 @@ import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 PLOT_DIR = os.path.join(REPO, 'output', 'figures')
+os.makedirs(PLOT_DIR, exist_ok=True)
 df=pd.read_csv(os.path.join(REPO, 'results', 'merged_all_tumors.csv'))
 t63=set(open(os.path.join(REPO, 'results', 'tumors63.txt')).read().split())
 RECON=['cassiopeia','nj','maxcut','smj','spectral','spectral_greedy']; eps=1e-300
@@ -50,5 +51,5 @@ axes[0,0].legend(loc='upper right')
 
 fig.suptitle(f'Predictors of cPHS discriminatory power — {len(r)} analyzed tumors', fontsize=19, fontweight='bold')
 plt.tight_layout(rect=[0,0,1,0.96])
-out=os.path.join(PLOT_DIR,'10b_predictor_comparison.png')
+out=os.path.join(PLOT_DIR,'FigS19_predictors.png')
 fig.savefig(out, dpi=150, bbox_inches='tight'); print('saved', out)

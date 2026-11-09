@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Regenerate 02_method_ranking.png with:
+Regenerate Fig6_method_ranking.png with:
   - Larger font sizes
   - No NNI/perturbed columns (dedicated NNI figure exists)
 """
@@ -16,6 +16,7 @@ import matplotlib.pyplot as plt
 
 # ── Config ──
 PLOT_DIR = os.path.join(REPO, 'output', 'figures')
+os.makedirs(PLOT_DIR, exist_ok=True)
 MIN_SITES = 7
 K_FLAG_CUTOFF = 15
 Q_CPHS_THRESHOLD = 0.35
@@ -219,6 +220,6 @@ fig.suptitle(f"Method ranking ({n_tumors} analyzed tumors)",
              fontsize=20, fontweight='bold')
 plt.tight_layout(rect=[0, 0, 1, 0.95])
 
-out_path = os.path.join(PLOT_DIR, '02_method_ranking.png')
+out_path = os.path.join(PLOT_DIR, 'Fig6_method_ranking.png')
 fig.savefig(out_path, dpi=150, bbox_inches='tight')
 print(f"Saved to {out_path}")

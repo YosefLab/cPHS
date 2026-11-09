@@ -10,6 +10,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 PLOT_DIR = os.path.join(REPO, 'output', 'figures')
+os.makedirs(PLOT_DIR, exist_ok=True)
 MERGED   = os.path.join(REPO, 'results', 'merged_all_tumors.csv')
 T63      = os.path.join(REPO, 'results', 'tumors63.txt')
 Q_THRESHOLD = 0.35
@@ -93,6 +94,6 @@ ax.set_title('C. Reliability map ($k$ vs $q$)', fontweight='bold'); ax.legend(lo
 
 fig.suptitle(f'cPHS reliability vs recording capacity — {len(r)} analyzed tumors', fontsize=18, fontweight='bold')
 plt.tight_layout(rect=[0,0,1,0.95])
-out=os.path.join(PLOT_DIR,'19c_reliability_by_k.png')
+out=os.path.join(PLOT_DIR,'FigS18_reliability_by_k.png')
 fig.savefig(out, dpi=150, bbox_inches='tight')
 print('saved', out)

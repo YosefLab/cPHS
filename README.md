@@ -59,7 +59,7 @@ This reproduces the value in `results/merged_all_tumors.csv` for the Cassiopeia 
 | Fig 6 (method ranking) | `figures/regen_02.py` | `results/merged_all_tumors.csv` |
 | Tables S1 to S4 (threshold calibration) | `calibration/tables_S1_S4.py` | outputs of `calibration/threshold_simulation.py` |
 | Table S5 (adopted thresholds) | summary of Tables S1 to S4 | |
-| Fig S17 (reliability vs $q$) | `figures/regen_19b.py` | `results/merged_all_tumors.csv` |
+| Fig S17 (reliability vs $q$) | `figures/fig_S17_reliability_by_q.py` | `results/merged_all_tumors.csv` |
 | Fig S18 (reliability vs $k$) | `figures/regen_19c_byk.py` | `results/merged_all_tumors.csv` |
 | Tables S6, S7 (best-method concordance) | `figures/concordance_final.py` | `results/merged_all_tumors.csv` |
 | Fig S19 (predictors of separation) | `figures/regen_10b.py` | `results/merged_all_tumors.csv` |

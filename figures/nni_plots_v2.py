@@ -5,7 +5,8 @@ NNI v2 perturbation analysis plots (edge-normalized).
 Reads results/nni_v2/*.csv.gz
 """
 
-import os, glob
+import os, glob, sys
+ALL_PLOTS = '--all' in sys.argv  # also write diagnostic plots not shown in the paper
 import os
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
@@ -120,7 +121,7 @@ legend_elements = [
 ]
 fig.legend(handles=legend_elements, loc='upper right', fontsize=12)
 plt.tight_layout()
-fig.savefig(os.path.join(OUTPUT_DIR, '01a_pass_count.png'), dpi=150, bbox_inches='tight')
+if ALL_PLOTS: fig.savefig(os.path.join(OUTPUT_DIR, '01a_pass_count.png'), dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved 01a")
 
@@ -163,7 +164,7 @@ for idx, method in enumerate(['cassiopeia', 'smj']):
 fig.suptitle('Mean fraction of reps passing cPHS (edge-normalized)',
              fontsize=16, fontweight='bold')
 plt.tight_layout()
-fig.savefig(os.path.join(OUTPUT_DIR, '01b_mean_frac.png'), dpi=150, bbox_inches='tight')
+if ALL_PLOTS: fig.savefig(os.path.join(OUTPUT_DIR, '01b_mean_frac.png'), dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved 01b")
 
@@ -201,7 +202,7 @@ for idx, method in enumerate(['cassiopeia', 'smj']):
 fig.suptitle('Total % of trees passing cPHS (pooled across tumors × reps, edge-normalized)',
              fontsize=16, fontweight='bold')
 plt.tight_layout()
-fig.savefig(os.path.join(OUTPUT_DIR, '01c_total_pct.png'), dpi=150, bbox_inches='tight')
+fig.savefig(os.path.join(OUTPUT_DIR, 'FigS20_nni_pass_rate.png'), dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved 01c")
 
@@ -233,7 +234,7 @@ for ax_idx, (metric, ylabel) in enumerate([
     ax.grid(alpha=0.3)
 
 plt.tight_layout()
-fig.savefig(os.path.join(OUTPUT_DIR, '02_mean_distances.png'), dpi=150, bbox_inches='tight')
+if ALL_PLOTS: fig.savefig(os.path.join(OUTPUT_DIR, '02_mean_distances.png'), dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved 02")
 
@@ -268,7 +269,7 @@ ax.legend(fontsize=12)
 ax.grid(alpha=0.3)
 ax.axhline(0, color='gray', ls=':', alpha=0.5)
 plt.tight_layout()
-fig.savefig(os.path.join(OUTPUT_DIR, '03_norm_parsimony.png'), dpi=150, bbox_inches='tight')
+if ALL_PLOTS: fig.savefig(os.path.join(OUTPUT_DIR, '03_norm_parsimony.png'), dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved 03")
 
@@ -304,7 +305,7 @@ for idx, method in enumerate(['cassiopeia', 'smj']):
     ax.legend(fontsize=6, ncol=2, loc='lower left')
 
 plt.tight_layout()
-fig.savefig(os.path.join(OUTPUT_DIR, '04_cphs_crossing.png'), dpi=150, bbox_inches='tight')
+if ALL_PLOTS: fig.savefig(os.path.join(OUTPUT_DIR, '04_cphs_crossing.png'), dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved 04")
 
@@ -360,7 +361,7 @@ for row, tumor in enumerate(sample):
         ax.grid(alpha=0.3)
 
 plt.tight_layout()
-fig.savefig(os.path.join(OUTPUT_DIR, '05_per_tumor_cphs.png'), dpi=150, bbox_inches='tight')
+if ALL_PLOTS: fig.savefig(os.path.join(OUTPUT_DIR, '05_per_tumor_cphs.png'), dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved 05")
 
@@ -392,7 +393,7 @@ for row, tumor in enumerate(sample):
             ax.grid(alpha=0.3)
 
 plt.tight_layout()
-fig.savefig(os.path.join(OUTPUT_DIR, '06_per_tumor_pars_rf.png'), dpi=150, bbox_inches='tight')
+if ALL_PLOTS: fig.savefig(os.path.join(OUTPUT_DIR, '06_per_tumor_pars_rf.png'), dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved 06")
 
@@ -454,7 +455,7 @@ for metric, ylabel, ax, normalize in metrics_config:
     ax.grid(alpha=0.3)
 
 plt.tight_layout()
-fig.savefig(os.path.join(OUTPUT_DIR, '07_all_tumors_overlaid.png'), dpi=150, bbox_inches='tight')
+fig.savefig(os.path.join(OUTPUT_DIR, 'FigS21_nni_metrics.png'), dpi=150, bbox_inches='tight')
 plt.close()
 print("  Saved 07")
 
