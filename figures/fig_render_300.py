@@ -4,11 +4,11 @@ fig_render_300.py  --  force 300 dpi (and larger titles where not hardcoded)
 on any of the KP figure scripts, without editing them.
 
 USAGE (on WEXAC):
-  PY=/home/projects/nyosef/yaaraneu/.conda/envs/cass/bin/python
-  $PY ~/threshold_calibration/fig_render_300.py ~/threshold_calibration/regen_02.py
-  $PY ~/threshold_calibration/fig_render_300.py ~/threshold_calibration/kp_phs_all.py
-  $PY ~/threshold_calibration/fig_render_300.py ~/quality_vs_cphs.py
-  $PY ~/threshold_calibration/fig_render_300.py ~/threshold_calibration/nni_plots.py
+  PY=python
+  $PY figures/fig_render_300.py figures/regen_02.py
+  $PY figures/fig_render_300.py kptracer/kp_phs_all.py
+  $PY figures/fig_render_300.py figures/quality_vs_cphs.py
+  $PY figures/fig_render_300.py figures/nni_plots_v2.py
   ... one call per script ...
 
 It works by:

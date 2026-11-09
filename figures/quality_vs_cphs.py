@@ -9,6 +9,8 @@ Each scatter plot has 2x2 layout:
 """
 
 import os, sys
+import os
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -20,10 +22,10 @@ from scipy.stats import spearmanr, mannwhitneyu
 import glob
 
 # ── Paths (edit MERGED_CSV if needed) ──
-MERGED_CSV = '/home/projects/nyosef/yaaraneu/KP_results_20260311_022408/merged_all_tumors.csv'
-TUMOR_STATS = '/home/projects/nyosef/yaaraneu/KPTracer-Data/tumor_statistics.tsv'
-TREES_DIR = '/home/projects/nyosef/yaaraneu/KPTracer-Data/trees'
-PLOT_DIR = '/home/projects/nyosef/yaaraneu/KP_quality_plots_v14'
+MERGED_CSV = os.path.join(REPO, 'results', 'merged_all_tumors.csv')
+TUMOR_STATS = os.path.join(os.environ.get("KPTRACER_DATA", os.path.expanduser("~/KPTracer-Data")), 'tumor_statistics.tsv')
+TREES_DIR = os.path.join(os.environ.get("KPTRACER_DATA", os.path.expanduser("~/KPTracer-Data")), 'trees')
+PLOT_DIR = os.path.join(REPO, 'output', 'figures')
 os.makedirs(PLOT_DIR, exist_ok=True)
 
 # ── Config ──

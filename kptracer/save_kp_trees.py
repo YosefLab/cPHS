@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Rebuild and save the KPTracer reconstructions used in the paper, reusing the
-EXACT functions from ~/kp_phs_all.py (everything after the download cell and before Cell 7).
+EXACT functions from kptracer/kp_phs_all.py (everything after the download cell and before Cell 7).
 
 Saves Newick with branch lengths:
     OUT_DIR/{tumor}/{method}.nwk     method in maxcut, smj, spectral, spectral_greedy
@@ -17,12 +17,14 @@ Usage:
     python save_kp_trees.py --tumor 3467_Lkb1_T1
 """
 import argparse, os, sys, random
+import os
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 
-PIPELINE = "/home/projects/nyosef/yaaraneu/kp_phs_all.py"
-FROZEN = "/home/projects/nyosef/yaaraneu/KP_results_20260311_022408/merged_all_tumors.csv"
-OUT_DIR = "/home/projects/nyosef/yaaraneu/kp_trees_deposit"
+PIPELINE = os.path.join(REPO, 'kptracer', 'kp_phs_all.py')
+FROZEN = os.path.join(REPO, 'results', 'merged_all_tumors.csv')
+OUT_DIR = os.path.join(REPO, 'output', 'trees')
 METHODS = ["maxcut", "smj", "spectral", "spectral_greedy"]   # all stochastic, seed-matched
 N_RANDOM = 5
 MAX_TRIES = 50

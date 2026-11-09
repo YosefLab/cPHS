@@ -3,3 +3,4 @@ __pycache__/
 .ipynb_checkpoints/
 KPTracer-Data/
 *.tar.gz
+output/

@@ -2,10 +2,12 @@
 """
 NNI v2 perturbation analysis plots (edge-normalized).
 
-Reads from ~/nni_analysis_v2/*.csv
+Reads results/nni_v2/*.csv.gz
 """
 
 import os, glob
+import os
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -17,9 +19,9 @@ plt.rcParams.update({'font.size': 14, 'axes.titlesize': 16, 'axes.labelsize': 15
                      'xtick.labelsize': 12, 'ytick.labelsize': 12})
 
 # ── Paths ──
-NNI_DIR = '/home/projects/nyosef/yaaraneu/nni_analysis_v2'
-MERGED_CSV = '/home/projects/nyosef/yaaraneu/KP_results_20260311_022408/merged_all_tumors.csv'
-OUTPUT_DIR = '/home/projects/nyosef/yaaraneu/nni_v2_plots'
+NNI_DIR = os.path.join(REPO, 'results', 'nni_v2')
+MERGED_CSV = os.path.join(REPO, 'results', 'merged_all_tumors.csv')
+OUTPUT_DIR = os.path.join(REPO, 'output', 'figures')
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 EXCLUDED = {'3430_NT_T1', '3434_NT_T1', '3777_Apc_T5'}
@@ -37,7 +39,7 @@ def get_threshold(k):
 
 print("Loading NNI v2 results...")
 all_dfs = []
-for f in sorted(glob.glob(f'{NNI_DIR}/*.csv')):
+for f in sorted(glob.glob(f'{NNI_DIR}/*.csv.gz')):
     all_dfs.append(pd.read_csv(f))
 
 nni = pd.concat(all_dfs, ignore_index=True)

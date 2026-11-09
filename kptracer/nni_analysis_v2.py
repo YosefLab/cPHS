@@ -13,6 +13,8 @@ Usage:
 """
 
 import os, sys, argparse, pickle, warnings
+import os
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 from copy import deepcopy
@@ -24,9 +26,9 @@ import cassiopeia as cass
 from cassiopeia.tools.branch_length_estimator.IIDExponentialMLE import IIDExponentialMLE
 
 # ── Paths ──
-TREES_DIR = '/home/projects/nyosef/yaaraneu/KPTracer-Data/trees'
-MERGED_CSV = '/home/projects/nyosef/yaaraneu/KP_results_20260311_022408/merged_all_tumors.csv'
-OUTPUT_DIR = '/home/projects/nyosef/yaaraneu/nni_analysis_v2'
+TREES_DIR = os.path.join(os.environ.get("KPTRACER_DATA", os.path.expanduser("~/KPTracer-Data")), 'trees')
+MERGED_CSV = os.path.join(REPO, 'results', 'merged_all_tumors.csv')
+OUTPUT_DIR = os.path.join(REPO, 'output', 'nni_v2')
 
 STOCHASTIC_MISSING_PROB = 0.10
 

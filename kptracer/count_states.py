@@ -1,8 +1,10 @@
 import pickle, glob, os
+import os
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 
-TREES = os.path.expanduser('~/KPTracer-Data/trees')
+TREES = os.path.join(os.environ.get("KPTRACER_DATA", os.path.expanduser("~/KPTracer-Data")), 'trees')
 rows_tumor, rows_site = [], []
 
 for f in sorted(glob.glob(f'{TREES}/*_priors.pkl')):
@@ -25,14 +27,14 @@ for f in sorted(glob.glob(f'{TREES}/*_priors.pkl')):
         n = len(priors[site])
         n_prior.append(n)
         rows_site.append({'tumor': tumor, 'site': site,
-                          'n_states_priors': n,
-                          'n_states_observed': obs.get(site, np.nan),
+                          'm_priors': n,
+                          'm_observed': obs.get(site, np.nan),
                           'prior_sum': float(sum(priors[site].values()))})
     n_prior = np.array(n_prior)
     n_obs = np.array([obs[s] for s in sorted(obs)]) if obs else np.array([np.nan])
 
-    rows_tumor.append({'tumor': tumor, 'n_sites_priors': len(n_prior),
-                       'n_sites_cm': len(obs),
+    rows_tumor.append({'tumor': tumor, 'k_priors': len(n_prior),
+                       'k_cm': len(obs),
                        'm_priors_min': n_prior.min(), 'm_priors_max': n_prior.max(),
                        'm_priors_mean': round(n_prior.mean(), 2),
                        'm_priors_median': float(np.median(n_prior)),

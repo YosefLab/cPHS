@@ -6,13 +6,15 @@ Orientations verified from random-tree rows:
   parsimony:  lower  = better  -> best = argmin
   likelihood: higher = better  -> best = argmax
 Run:
-  /home/projects/nyosef/yaaraneu/.conda/envs/cass/bin/python concordance_final.py
+  python figures/concordance_final.py
 """
 import os
+import os
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 
-MERGED = os.path.expanduser("~/KP_results_20260311_022408/merged_all_tumors.csv")
+MERGED = os.path.join(REPO, 'results', 'merged_all_tumors.csv')
 METHODS = ["cassiopeia", "maxcut", "nj", "smj", "spectral", "spectral_greedy"]
 
 df = pd.read_csv(MERGED)

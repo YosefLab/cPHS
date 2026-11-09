@@ -6,6 +6,8 @@ Regenerate 02_method_ranking.png with:
 """
 
 import os, re
+import os
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -13,7 +15,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 # ── Config ──
-PLOT_DIR = '/home/projects/nyosef/yaaraneu/KP_results_20260311_022408'
+PLOT_DIR = os.path.join(REPO, 'output', 'figures')
 MIN_SITES = 7
 K_FLAG_CUTOFF = 15
 Q_CPHS_THRESHOLD = 0.35
@@ -52,7 +54,7 @@ METHOD_COLORS = {
 }
 
 # ── Load and process data ──
-df = pd.read_csv(os.path.join(PLOT_DIR, 'merged_all_tumors.csv'))
+df = pd.read_csv(os.path.join(REPO, 'results', 'merged_all_tumors.csv'))
 for col in ['cPHS', 'parsimony', 'likelihood', 'q', 'n_cells', 'n_sites']:
     if col in df.columns:
         df[col] = pd.to_numeric(df[col], errors='coerce')
@@ -70,7 +72,7 @@ for t in df.tumor.unique():
         excluded_tumors.add(t)
 
 # Restrict to the 63 analyzed tumors (explicit list), not the site-filter set
-with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tumors63.txt')) as _fh:
+with open(os.path.join(REPO, 'results', 'tumors63.txt')) as _fh:
     TUMORS_63 = set(l.strip() for l in _fh if l.strip())
 df = df[df.tumor.isin(TUMORS_63)].copy()
 tumors = sorted(df.tumor.unique())

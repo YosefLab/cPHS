@@ -7,31 +7,32 @@
 import os
 import subprocess
 
-# Download the KPTracer dataset from Zenodo
-url = "https://zenodo.org/records/5847462/files/KPTracer-Data.tar.gz?download=1"
-output_path = os.path.expanduser("~/KPTracer-Data.tar.gz")
+DATA = os.environ.get("KPTRACER_DATA", DATA)
+if not os.path.isdir(os.path.join(DATA, "trees")):
+    # Download the KPTracer dataset from Zenodo
+    url = "https://zenodo.org/records/5847462/files/KPTracer-Data.tar.gz?download=1"
+    output_path = os.path.join(os.path.dirname(DATA), "KPTracer-Data.tar.gz")
 
-print("Downloading KPTracer data (~1.3 GB)...")
-subprocess.run(["wget", "-q", "--show-progress", url, "-O", output_path], check=True)
+    print("Downloading KPTracer data (~1.3 GB)...")
+    subprocess.run(["wget", "-q", "--show-progress", url, "-O", output_path], check=True)
 
-# Extract
-print("Extracting...")
-subprocess.run(["tar", "-xzf", output_path, "-C", os.path.expanduser("~")], check=True)
+    # Extract
+    print("Extracting...")
+    subprocess.run(["tar", "-xzf", output_path, "-C", os.path.dirname(DATA)], check=True)
 
-# Remove the archive to save space
-os.remove(output_path)
+    # Remove the archive to save space
+    os.remove(output_path)
 
-# Show what was extracted
-for root, dirs, files in os.walk(os.path.expanduser("~/KPTracer-Data")):
-    level = root.replace(os.path.expanduser("~/KPTracer-Data"), "").count(os.sep)
-    indent = " " * 2 * level
-    print(f"{indent}{os.path.basename(root)}/")
-    if level < 2:  # only show files for first 2 levels
-        subindent = " " * 2 * (level + 1)
-        for file in files:
-            size_mb = os.path.getsize(os.path.join(root, file)) / 1e6
-            print(f"{subindent}{file} ({size_mb:.1f} MB)")
-
+    # Show what was extracted
+    for root, dirs, files in os.walk(DATA):
+        level = root.replace(DATA, "").count(os.sep)
+        indent = " " * 2 * level
+        print(f"{indent}{os.path.basename(root)}/")
+        if level < 2:  # only show files for first 2 levels
+            subindent = " " * 2 * (level + 1)
+            for file in files:
+                size_mb = os.path.getsize(os.path.join(root, file)) / 1e6
+                print(f"{subindent}{file} ({size_mb:.1f} MB)")
 
 # In[ ]:
 
@@ -106,7 +107,7 @@ warnings.filterwarnings('ignore', message='Objective contains too many subexpres
 warnings.filterwarnings('ignore', message='Solution may be inaccurate')
 warnings.filterwarnings('ignore', category=RuntimeWarning)
 
-DATA_DIR = os.path.expanduser("~/KPTracer-Data")
+DATA_DIR = os.environ.get("KPTRACER_DATA", os.path.expanduser("~/KPTracer-Data"))
 eps = 1e-17
 
 os.makedirs(CHECKPOINT_DIR, exist_ok=True)

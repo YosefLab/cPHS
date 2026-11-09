@@ -7,6 +7,8 @@ One plot per method × k value.
 """
 
 import os, glob
+import os
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -20,9 +22,9 @@ plt.rcParams.update({'font.size': 20, 'axes.titlesize': 22, 'axes.labelsize': 20
                      'xtick.labelsize': 17, 'ytick.labelsize': 17})
 
 # ── Paths ──
-RESULTS_DIR = '/home/projects/nyosef/yaaraneu/threshold_calibration/results'
-MERGED_CSV = '/home/projects/nyosef/yaaraneu/KP_results_20260311_022408/merged_all_tumors.csv'
-OUTPUT_DIR = '/home/projects/nyosef/yaaraneu/sim_vs_kp_plots'
+RESULTS_DIR = os.path.join(REPO, 'calibration', 'results')
+MERGED_CSV = os.path.join(REPO, 'results', 'merged_all_tumors.csv')
+OUTPUT_DIR = os.path.join(REPO, 'output', 'figures')
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 EXCLUDED = {'3430_NT_T1', '3434_NT_T1', '3777_Apc_T5'}

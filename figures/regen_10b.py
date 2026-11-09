@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """10b: separation vs predictors (q, lambda*q, lambda, k, k/n, n), 63 tumors."""
 import os, numpy as np, pandas as pd
+import os
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from scipy.stats import spearmanr
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-PLOT_DIR='/home/projects/nyosef/yaaraneu/KP_results_20260311_022408'
-df=pd.read_csv(os.path.join(PLOT_DIR,'merged_all_tumors.csv'))
-t63=set(open(os.path.expanduser('~/threshold_calibration/tumors63.txt')).read().split())
+PLOT_DIR = os.path.join(REPO, 'output', 'figures')
+df=pd.read_csv(os.path.join(REPO, 'results', 'merged_all_tumors.csv'))
+t63=set(open(os.path.join(REPO, 'results', 'tumors63.txt')).read().split())
 RECON=['cassiopeia','nj','maxcut','smj','spectral','spectral_greedy']; eps=1e-300
 GENO_COLORS={'Apc':'#1f77b4','Lkb1':'#ff7f0e','NT':'#2ca02c'}
 

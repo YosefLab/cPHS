@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """19c: cPHS reliability vs k (panels A,B) + 2D k-vs-q map (panel C), 63 tumors."""
 import os
+import os
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-PLOT_DIR = '/home/projects/nyosef/yaaraneu/KP_results_20260311_022408'
-MERGED   = os.path.join(PLOT_DIR, 'merged_all_tumors.csv')
-T63      = os.path.expanduser('~/threshold_calibration/tumors63.txt')
+PLOT_DIR = os.path.join(REPO, 'output', 'figures')
+MERGED   = os.path.join(REPO, 'results', 'merged_all_tumors.csv')
+T63      = os.path.join(REPO, 'results', 'tumors63.txt')
 Q_THRESHOLD = 0.35
 K_FLAG = 15
 RECON = ['cassiopeia','nj','maxcut','smj','spectral','spectral_greedy']
