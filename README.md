@@ -1,11 +1,12 @@
-# cPHS on KPTracer data
+# cPHS
 
-Code, trees and result tables for the KPTracer analysis (Section 6 and Appendices L to P) of
+Code and data for the paper
 
 > Zilber, Prillo, Neumeier, Yosef, Nadler. *Can you trust your reconstructed lineage tree?
 > A homoplasy-based approach for irreversible evolution.*
 
-The code for the simulation study (Sections 4 and 5, Appendices A to K) will be added to this repository.
+This repository contains the implementation of the cPHS score and the analysis of the KPTracer
+lung adenocarcinoma data (Section 6 and Appendices L to P).
 A maintained implementation of cPHS is being integrated into
 [Cassiopeia](https://github.com/YosefLab/Cassiopeia) (`calculate_cPHS`, PR #289).
 The code here is the exact code that produced the numbers in the paper.
