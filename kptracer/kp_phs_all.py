@@ -323,6 +323,9 @@ def score_tree(tree, lam, q):
         pars = cass.tools.calculate_parsimony(tree)
     except:
         pars = np.nan
+    # missing-data parameter as used for the published likelihood values (same as nni_analysis_v2.py)
+    tree.parameters['stochastic_missing_probability'] = 0.10
+    tree.parameters.pop('heritable_missing_rate', None)
     try:
         with np.errstate(divide='ignore', invalid='ignore'):
             lik = cass.tools.calculate_likelihood_continuous(tree)
