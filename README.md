@@ -95,9 +95,6 @@ and are not duplicated here. The perturbed trees of the NNI analysis are in `res
 
 ## Implementation notes
 
-* **cPHS.** `cphs/core.py` follows Algorithm 1 with a fixed number of sites $k$ in the binomial
-  tail probability. Missing entries are excluded from the homoplasy count. Leaf pairs whose tail
-  probability equals 1 are kept when taking the minimum adjusted score.
 * **Collision probability.** The deposited indel priors do not sum to one per site. They are
   normalized per site, $q_i = \sum_j q_{ij}^2$ is computed for each site, and $q$ is the mean over sites.
 * **Stochastic solvers.** In Cassiopeia 2.1.0, MaxCut, SMJ and the spectral solvers depend on the
