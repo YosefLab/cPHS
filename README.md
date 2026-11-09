@@ -51,7 +51,13 @@ python examples/score_one_tree.py --data ~/KPTracer-Data --tumor 3435_NT_T3
 # 3435_NT_T3: n=322, k=30, lambda=2.432, q=0.0966, cPHS=9.353e-10
 ```
 
-This reproduces the value in `results/merged_all_tumors.csv` for the Cassiopeia tree of this tumor.
+This reproduces the value in `results/merged_all_tumors.csv` for the Cassiopeia tree of this tumor. To score any tree deposited in `trees/`:
+
+````bash
+python examples/score_one_tree.py --data ~/KPTracer-Data --tumor 3467_Lkb1_T1 --tree trees/3467_Lkb1_T1/smj.nwk
+# 3467_Lkb1_T1 smj: n=116, k=27, lambda=3.246, q=0.1818, parsimony=405, cPHS=2.861e-04
+#   paper: parsimony=405, cPHS=2.861e-04
+```
 
 ## Paper figures and tables
 
