@@ -15,13 +15,15 @@ The code here is the exact code that produced the numbers in the paper.
 
 | Folder | Contents |
 |---|---|
-| `cphs/` | Core cPHS functions used for all KPTracer results |
+| `cphs/` | The cPHS score (`core.py`): pairwise homoplasy counts, the cPHS test statistic, estimation of $\lambda$ and $q$, and tree preprocessing |
 | `examples/` | Minimal example: score one tumor's tree |
-| `kptracer/` | KPTracer pipeline: reconstructions, random trees, scores, NNI perturbation, per-site state counts |
-| `calibration/` | Threshold-calibration simulations and Tables S1 to S4 (Appendix M) |
-| `figures/` | Scripts for the figures and tables of Section 6 and Appendices L to P |
-| `results/` | Result tables underlying the paper |
-| `trees/` | Trees scored in the paper (Newick with branch lengths) |
+| `kptracer/` | KPTracer pipeline: reconstructions with six algorithms, random trees and scores (`kp_phs_all.py`), the tree deposit (`save_kp_trees.py`), NNI perturbation (`nni_analysis_v2.py`), number of mutated states per site (`count_states.py`) |
+| `calibration/` | Threshold-calibration simulations (Appendix M), their outputs (`calibration/results/`), and the script reproducing Tables S1 to S4 |
+| `figures/` | One script per figure or table of Section 6 and Appendices L to P (see the table below) |
+| `results/` | Deposited results: scores of all trees, the 63 analyzed tumors, the per-tumor summary, states per site, NNI perturbation results with the perturbed trees |
+| `trees/` | The reconstructed and random trees scored in the paper (Newick with branch lengths) |
+
+Scripts write their outputs to `output/`, which is not part of the repository.
 
 ## Installation
 

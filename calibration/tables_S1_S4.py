@@ -10,9 +10,7 @@ Results files (from calibration/threshold_simulation*.py), searched in this orde
   threshold_n{n}_k{k}.csv                (m = 50, rho = 0.5)
   threshold_n{n}_k{k}_m{m}.csv           (rho = 0.5)
   threshold_n{n}_k{k}_m{m}_rho{r}.csv
-  log_n{n}_k{k}_rho{r}.csv               (m = 50; column log_cPHS)
 Every matching file is reported, so the one behind each published row can be identified.
-For log files, log_cPHS is evaluated both as natural log and as log10.
 
     python calibration/tables_S1_S4.py ~/threshold_calibration/results
 """
@@ -35,8 +33,6 @@ def candidates(n, k, m, rho):
     c.append(f"threshold_n{n}_k{k}_m{m}_rho{r}.csv")
     if m == 50:
         c.append(f"threshold_n{n}_k{k}_rho{r}.csv")
-    if m == 50:
-        c.append(f"log_n{n}_k{k}_rho{r}.csv")
     return [f for f in c if os.path.exists(os.path.join(RES, f))]
 
 
