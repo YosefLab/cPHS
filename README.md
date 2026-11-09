@@ -55,8 +55,8 @@ This reproduces the value in `results/merged_all_tumors.csv` for the Cassiopeia 
 
 ```bash
 python examples/score_one_tree.py --data ~/KPTracer-Data --tumor 3467_Lkb1_T1 --tree trees/3467_Lkb1_T1/smj.nwk
-# 3467_Lkb1_T1 smj: n=116, k=27, lambda=3.246, q=0.1818, parsimony=405, cPHS=2.861e-04
-#   paper: parsimony=405, cPHS=2.861e-04
+# 3467_Lkb1_T1 smj: n=116, k=27, lambda=3.246, q=0.1818, parsimony=405, likelihood=-2256.75, cPHS=2.861e-04
+#   paper: parsimony=405, likelihood=-2256.75, cPHS=2.861e-04
 ```
 
 ## Paper figures and tables
@@ -122,7 +122,9 @@ and are not duplicated here. The perturbed trees of the NNI analysis are in `res
 * **Table S10** uses the uniform threshold $t = 0.05$ and the 48 low-$q$ tumors of the earlier
   71-tumor cohort (all tumors in `merged_all_tumors.csv` except three, with $k \geq 7$ and $q < 0.35$).
 * **Script versions.** Scripts are deposited as they were run; the only later change is replacing
-  the original absolute paths with `KPTRACER_DATA` and repository-relative paths (see git history).
+  the original absolute paths with `KPTRACER_DATA` and repository-relative paths, and setting the
+  missing-data parameter in `score_tree` (`kp_phs_all.py`) to the value used for the published
+  likelihoods (`stochastic_missing_probability = 0.10`, as in `nni_analysis_v2.py`); see git history.
 
 ## Running the scripts
 
