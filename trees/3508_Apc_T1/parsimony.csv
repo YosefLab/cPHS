@@ -1,0 +1,10 @@
+tumor,method,rep,parsimony,seed,matched,cPHS
+3508_Apc_T1,maxcut,,2050,0,False,1.325887157915489e-13
+3508_Apc_T1,smj,,2192,0,True,
+3508_Apc_T1,spectral,,3183,0,True,
+3508_Apc_T1,spectral_greedy,,3105,0,True,
+3508_Apc_T1,random,0,52078,,,
+3508_Apc_T1,random,1,52399,,,
+3508_Apc_T1,random,2,52372,,,
+3508_Apc_T1,random,3,51915,,,
+3508_Apc_T1,random,4,51902,,,
