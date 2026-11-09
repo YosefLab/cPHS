@@ -97,11 +97,13 @@ and are not duplicated here. The perturbed trees of the NNI analysis are in `res
 
 * **Collision probability.** The deposited indel priors do not sum to one per site. They are
   normalized per site, $q_i = \sum_j q_{ij}^2$ is computed for each site, and $q$ is the mean over sites.
-* **Stochastic solvers.** In Cassiopeia 2.1.0, MaxCut, SMJ and the spectral solvers depend on the
-  NumPy random state, and the original run did not fix it. `save_kp_trees.py` therefore seeds
-  each solver and searches seeds until the tree's parsimony equals the value in
-  `merged_all_tumors.csv`, and records the seed used. Trees for which no seed reproduced the
-  original value are listed in `trees/unmatched.csv` with their recomputed scores.
+* **Stochastic solvers.** In Cassiopeia 2.1.0, MaxCut, SMJ and the two spectral solvers can return
+  slightly different trees on repeated runs, and the original run did not fix a seed. MaxCut depends
+  on the NumPy random state, so `save_kp_trees.py` seeds it and searches seeds until the tree's
+  parsimony equals the value in `merged_all_tumors.csv`, and records the seed. For SMJ and the
+  spectral solvers the variation is not controlled by seeding; their trees are deposited as
+  regenerated. Trees whose parsimony differs from the scored tree are listed in
+  `trees/unmatched.csv`, with their recomputed cPHS and whether the accept/reject decision changes.
 * **Random trees** are fully reproducible (`random.seed(r)`, $r = 0, \ldots, 4$).
 * **Calibration, $\varepsilon$.** The cutoff printed as 0.67 in Tables S1 to S4 is $2/3$ exactly.
 * **Rounding in Tables S1 to S4.** The published values were rounded by hand from three-decimal
