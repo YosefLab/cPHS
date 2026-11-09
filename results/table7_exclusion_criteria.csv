@@ -1,0 +1,64 @@
+Tumor,Genotype,Cells,Sites,q,Random pass,Status,Reason
+3508_Apc_All,Apc,4798,29,0.113,0/5,OK,
+3508_Apc_T1,Apc,3731,27,0.116,0/5,OK,
+3515_Lkb1_All,Lkb1,2209,30,0.063,0/5,OK,
+3513_NT_T2,NT,2118,28,0.132,0/5,OK,
+3454_Lkb1_All,Lkb1,1849,24,0.221,0/5,OK,
+3513_NT_T3,NT,1457,29,0.138,0/5,OK,
+3730_NT_T1,NT,1226,30,0.068,0/5,OK,
+3434_NT_T2,NT,1166,30,0.123,0/5,OK,
+3435_NT_T1,NT,1124,30,0.083,0/5,OK,
+3454_Lkb1_T1,Lkb1,1119,24,0.303,0/5,OK,
+3519_Lkb1_All,Lkb1,959,26,0.105,0/5,OK,
+3510_Apc_T1,Apc,921,29,0.173,0/5,OK,
+3726_NT_T2,NT,854,30,0.071,0/5,OK,
+3726_NT_T1,NT,772,29,0.151,0/5,OK,
+3457_Apc_T1,Apc,714,25,0.296,0/5,OK,
+3515_Lkb1_T1,Lkb1,710,30,0.096,0/5,OK,
+3730_NT_T2,NT,658,30,0.089,0/5,OK,
+3510_Apc_T3,Apc,649,30,0.132,0/5,OK,
+3467_Lkb1_T2,Lkb1,610,21,0.152,0/5,OK,
+3513_NT_T4,NT,604,30,0.239,0/5,OK,
+3777_Apc_T4,Apc,550,19,0.286,0/5,OK,
+3519_Lkb1_T1_Fam,Lkb1,468,29,0.133,0/5,OK,
+3458_Apc_T1,Apc,462,18,0.289,0/5,OK,
+3519_Lkb1_T1,Lkb1,453,29,0.133,0/5,OK,
+3519_Lkb1_T2,Lkb1,401,20,0.321,0/5,OK,
+3513_NT_T5,NT,347,30,0.277,0/5,OK,
+3435_NT_T3,NT,322,30,0.097,0/5,OK,
+3466_Lkb1_T2,Lkb1,306,22,0.304,0/5,OK,
+3435_NT_T4,NT,294,30,0.283,0/5,OK,
+3432_NT_T1,NT,226,29,0.243,0/5,OK,
+3777_Apc_T2,Apc,215,18,0.235,0/5,OK,
+3515_Lkb1_T2,Lkb1,213,29,0.082,0/5,OK,
+3507_Apc_T2,Apc,204,34,0.332,0/5,OK,
+3458_Apc_T2,Apc,202,30,0.308,0/5,OK,
+3507_Apc_T1,Apc,199,28,0.266,0/5,OK,
+3435_NT_T6,NT,173,22,0.262,0/5,OK,
+3520_NT_T1,NT,149,30,0.205,0/5,OK,
+3777_Apc_T6,Apc,139,24,0.285,0/5,OK,
+3505_Lkb1_T3,Lkb1,136,29,0.280,0/5,OK,
+3522_Apc_T1,Apc,130,23,0.284,0/5,OK,
+3505_Lkb1_T2,Lkb1,119,35,0.268,0/5,OK,
+3467_Lkb1_T1,Lkb1,116,27,0.182,0/5,OK,
+3508_Apc_T2_Fam,Apc,1067,7,0.241,2/5,LOW_K,low k (limited cPHS power)
+3510_Apc_T2,Apc,765,14,0.149,0/5,LOW_K,low k (limited cPHS power)
+3454_Lkb1_T3,Lkb1,700,10,0.245,0/5,LOW_K,low k (limited cPHS power)
+3732_Lkb1_T2,Lkb1,693,14,0.242,0/5,LOW_K,low k (limited cPHS power)
+3430_NT_T2,NT,511,9,0.266,5/5,LOW_K,low k (limited cPHS power)
+3433_NT_T2,NT,330,13,0.203,0/5,LOW_K,low k (limited cPHS power)
+3765_Apc_T1,Apc,1356,42,0.522,0/5,HIGH_Q,high q (reduced power)
+3460_Lkb1_T1_Fam,Lkb1,849,30,0.558,3/5,HIGH_Q,high q (reduced power)
+3460_Lkb1_T1,Lkb1,564,30,0.602,5/5,HIGH_Q,high q (reduced power)
+3457_Apc_T4,Apc,346,9,0.544,5/5,HIGH_Q,high q (reduced power)
+3508_Apc_T2,Apc,312,16,0.520,0/5,HIGH_Q,high q (reduced power)
+3466_Lkb1_T1,Lkb1,301,24,0.495,0/5,HIGH_Q,high q (reduced power)
+3457_Apc_T2,Apc,246,20,0.489,0/5,HIGH_Q,high q (reduced power)
+3432_NT_T2,NT,197,23,0.355,0/5,HIGH_Q,high q (reduced power)
+3454_Lkb1_T2,Lkb1,135,13,0.528,5/5,HIGH_Q,high q (reduced power)
+3465_Lkb1_T1,Lkb1,126,21,0.745,5/5,HIGH_Q,high q (reduced power)
+3464_Lkb1_T1,Lkb1,124,15,0.418,0/5,HIGH_Q,high q (reduced power)
+3522_Apc_T2,Apc,118,26,0.659,5/5,HIGH_Q,high q (reduced power)
+3515_Lkb1_T3,Lkb1,118,19,0.379,0/5,HIGH_Q,high q (reduced power)
+3703_NT_T2,NT,106,67,0.765,5/5,HIGH_Q,high q (reduced power)
+3777_Apc_T5,Apc,402,6,0.181,5/5,EXCLUDED,< 7 sites
