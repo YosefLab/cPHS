@@ -68,7 +68,7 @@ This reproduces the value in `results/merged_all_tumors.csv` for the Cassiopeia 
 | Table S9 (flagged tumors under NNI) | `figures/table_S9_flagged.py` | `results/merged_all_tumors.csv` |
 | Table S10 (NNI degradation) | `figures/table_S10_degradation.py` | `results/merged_all_tumors.csv` |
 | Figs S20, S21 (NNI perturbation) | `kptracer/nni_analysis_v2.py`, `figures/nni_plots_v2.py` | KPTracer data; results in `results/nni_v2/` |
-| Supplementary table `KPTracer_summary.xlsx` | | `results/KPTracer_summary_63.xlsx` |
+| Supplementary table `KPTracer_summary.xlsx` | | `results/KPTracer_summary.xlsx` |
 
 Figures were rendered at 300 dpi with `figures/fig_render_300.py`.
 
@@ -78,7 +78,7 @@ Figures were rendered at 300 dpi with `figures/fig_render_300.py`.
 |---|---|
 | `results/merged_all_tumors.csv` | cPHS, parsimony and likelihood for every scored tree (six reconstructions, five random trees and NNI-perturbed Cassiopeia trees per tumor), with $n$, $k$, $\lambda$, $q$ |
 | `results/table7_exclusion_criteria.csv` | The 63 analyzed tumors (Appendix L) |
-| `results/KPTracer_summary_63.xlsx` | Per-tumor summary of the 63 analyzed tumors |
+| `results/KPTracer_summary.xlsx` | Per-tumor summary of the 63 analyzed tumors |
 | `results/m_states/` | Number of mutated states per site (`m_per_site.csv`) and per tumor (`m_per_tumor.csv`) |
 | `results/nni_v2/` | NNI perturbation results (Appendix P): one row per perturbed tree, including its Newick string; 34 tumors, Cassiopeia and SMJ, 8 levels, 20 replicates |
 

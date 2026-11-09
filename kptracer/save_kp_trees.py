@@ -27,7 +27,7 @@ FROZEN = os.path.join(REPO, 'results', 'merged_all_tumors.csv')
 OUT_DIR = os.path.join(REPO, 'output', 'trees')
 METHODS = ["maxcut", "smj", "spectral", "spectral_greedy"]   # all stochastic, seed-matched
 N_RANDOM = 5
-MAX_TRIES = 50
+MAX_TRIES = 20
 
 # ── load kp_phs_all.py from "# In[2]:" (after the download cell) up to Cell 7 (before the main loop) ──
 src = open(PIPELINE).read()
