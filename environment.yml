@@ -213,4 +213,3 @@ dependencies:
       - xyzservices==2025.11.0
       - yarl==1.22.0
       - zarr==2.18.3
-prefix: /home/projects/nyosef/yaaraneu/.conda/envs/cass
