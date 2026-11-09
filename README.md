@@ -1,4 +1,4 @@
-# cPHS
+# cPHS: pairwise homoplasy score for assessing reconstructed lineage trees
 
 Code and data for the paper
 
