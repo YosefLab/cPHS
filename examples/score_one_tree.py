@@ -1,5 +1,5 @@
 """
-Score one KPTracer tree with cPHS and parsimony, and compare with the value in the paper.
+Score one KPTracer tree with cPHS, parsimony and likelihood, and compare with the value in the paper.
 
     python examples/score_one_tree.py --data ~/KPTracer-Data --tumor 3435_NT_T3
         scores the Cassiopeia tree deposited by Yang et al. (2022)
@@ -41,8 +41,12 @@ else:
     tree, name = tree_cass, "cassiopeia"
 
 cphs, pars = calc_cPHS(tree, lam, q), cass.tools.calculate_parsimony(tree)
+# likelihood as in the paper (kptracer/kp_phs_all.py, score_tree)
+tree.parameters['stochastic_missing_probability'] = 0.10
+tree.parameters.pop('heritable_missing_rate', None)
+lik = cass.tools.calculate_likelihood_continuous(tree)
 print(f"{a.tumor} {name}: n={cm.shape[0]}, k={cm.shape[1]}, lambda={lam:.3f}, q={q:.4f}, "
-      f"parsimony={pars}, cPHS={cphs:.3e}")
+      f"parsimony={pars}, likelihood={lik:.2f}, cPHS={cphs:.3e}")
 
 # value in the paper (random_r is the r-th random tree)
 fz = pd.read_csv(os.path.join(REPO, "results", "merged_all_tumors.csv"))
@@ -52,4 +56,4 @@ if name.startswith("random_"):
 else:
     row = fz[fz.method == name].iloc[0] if (fz.method == name).any() else None
 if row is not None:
-    print(f"  paper: parsimony={row.parsimony:.0f}, cPHS={row.cPHS:.3e}")
+    print(f"  paper: parsimony={row.parsimony:.0f}, likelihood={row.likelihood:.2f}, cPHS={row.cPHS:.3e}")
