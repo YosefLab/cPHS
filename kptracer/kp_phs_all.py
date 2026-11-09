@@ -7,7 +7,7 @@
 import os
 import subprocess
 
-DATA = os.environ.get("KPTRACER_DATA", DATA)
+DATA = os.environ.get("KPTRACER_DATA", os.path.expanduser("~/KPTracer-Data"))
 if not os.path.isdir(os.path.join(DATA, "trees")):
     # Download the KPTracer dataset from Zenodo
     url = "https://zenodo.org/records/5847462/files/KPTracer-Data.tar.gz?download=1"
