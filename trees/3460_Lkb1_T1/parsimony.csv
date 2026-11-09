@@ -1,0 +1,10 @@
+tumor,method,rep,parsimony,seed,matched,cPHS
+3460_Lkb1_T1,maxcut,,464,4,True,1.0
+3460_Lkb1_T1,smj,,670,0,True,
+3460_Lkb1_T1,spectral,,816,0,False,0.06823983165984784
+3460_Lkb1_T1,spectral_greedy,,734,0,True,
+3460_Lkb1_T1,random,0,3161,,,
+3460_Lkb1_T1,random,1,3050,,,
+3460_Lkb1_T1,random,2,3238,,,
+3460_Lkb1_T1,random,3,3068,,,
+3460_Lkb1_T1,random,4,3105,,,

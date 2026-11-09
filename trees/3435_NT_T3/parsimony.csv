@@ -1,0 +1,10 @@
+tumor,method,rep,parsimony,seed,matched,cPHS
+3435_NT_T3,maxcut,,1786,0,False,7.629420305521606e-06
+3435_NT_T3,smj,,1883,0,True,
+3435_NT_T3,spectral,,2182,0,True,
+3435_NT_T3,spectral_greedy,,2138,0,True,
+3435_NT_T3,random,0,5786,,,
+3435_NT_T3,random,1,5777,,,
+3435_NT_T3,random,2,5750,,,
+3435_NT_T3,random,3,5708,,,
+3435_NT_T3,random,4,5674,,,

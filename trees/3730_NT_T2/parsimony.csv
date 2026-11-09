@@ -1,0 +1,10 @@
+tumor,method,rep,parsimony,seed,matched,cPHS
+3730_NT_T2,maxcut,,2405,0,True,1.7485999698196864e-07
+3730_NT_T2,smj,,2530,0,True,
+3730_NT_T2,spectral,,2895,0,False,1.1998901872090073e-11
+3730_NT_T2,spectral_greedy,,3038,0,True,
+3730_NT_T2,random,0,10130,,,
+3730_NT_T2,random,1,10161,,,
+3730_NT_T2,random,2,10178,,,
+3730_NT_T2,random,3,10187,,,
+3730_NT_T2,random,4,10206,,,

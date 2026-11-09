@@ -1,0 +1,10 @@
+tumor,method,rep,parsimony,seed,matched,cPHS
+3507_Apc_T2,maxcut,,521,2,True,1.0
+3507_Apc_T2,smj,,635,0,True,
+3507_Apc_T2,spectral,,807,0,True,
+3507_Apc_T2,spectral_greedy,,739,0,True,
+3507_Apc_T2,random,0,2995,,,
+3507_Apc_T2,random,1,3098,,,
+3507_Apc_T2,random,2,3046,,,
+3507_Apc_T2,random,3,3036,,,
+3507_Apc_T2,random,4,3147,,,

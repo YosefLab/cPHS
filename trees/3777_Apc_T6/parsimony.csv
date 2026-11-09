@@ -1,0 +1,10 @@
+tumor,method,rep,parsimony,seed,matched,cPHS
+3777_Apc_T6,maxcut,,302,2,True,0.2507530766244247
+3777_Apc_T6,smj,,350,0,True,
+3777_Apc_T6,spectral,,467,0,True,
+3777_Apc_T6,spectral_greedy,,429,0,True,
+3777_Apc_T6,random,0,1078,,,
+3777_Apc_T6,random,1,1255,,,
+3777_Apc_T6,random,2,1203,,,
+3777_Apc_T6,random,3,1234,,,
+3777_Apc_T6,random,4,1259,,,
