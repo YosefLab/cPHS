@@ -150,7 +150,9 @@ The full analysis, in order:
 5. **Threshold calibration** (Appendix M):
    `python calibration/threshold_simulation.py --n <n> --k <k> --reps 100 --output <file>` for each
    configuration, then `python calibration/tables_S1_S4.py calibration/results`.
-6. **Figures and tables**: the scripts in `figures/` (see the table above) read `results/` and write to `output/figures/`.
+6. **Figures and tables**: `bash figures/make_all.sh` regenerates all figures (300 dpi) and tables of
+   Section 6 and Appendices L to P from `results/`, into `output/figures/` and `output/tables/`;
+   each script can also be run on its own (see the table above).
 
 Steps 1 to 5 are slow; steps 6 and the table scripts run in seconds to minutes from the deposited
 results, so the paper's figures and tables can be reproduced without rerunning the pipeline.
