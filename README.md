@@ -63,6 +63,7 @@ python examples/score_one_tree.py --data ~/KPTracer-Data --tumor 3467_Lkb1_T1 --
 
 | Paper item | Script | Input |
 |---|---|---|
+| **All figures and tables below, in one run** | `figures/make_all.sh` | `results/`, `calibration/results/` |
 | Section 6, all KP numbers | `kptracer/kp_phs_all.py` | KPTracer data, produces `results/merged_all_tumors.csv` |
 | Section 6, number of mutated states $m$ | `kptracer/count_states.py` | KPTracer priors, produces `results/m_states/` |
 | Fig 6 (method ranking) | `figures/regen_02.py` | `results/merged_all_tumors.csv` |
