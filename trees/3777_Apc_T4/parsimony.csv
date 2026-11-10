@@ -1,7 +1,7 @@
 tumor,method,rep,parsimony,seed,matched,cPHS
 3777_Apc_T4,maxcut,,565,144.0,True,0.0103215010087621
 3777_Apc_T4,smj,,853,0.0,True,
-3777_Apc_T4,spectral,,1155,0.0,False,4.739879334858532e-06
+3777_Apc_T4,spectral,,1119,,True,4.740072093167846e-06
 3777_Apc_T4,spectral_greedy,,975,0.0,True,
 3777_Apc_T4,random,0.0,3768,,,
 3777_Apc_T4,random,1.0,3835,,,
