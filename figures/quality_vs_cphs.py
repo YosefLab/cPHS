@@ -25,7 +25,7 @@ import glob
 MERGED_CSV = os.path.join(REPO, 'results', 'merged_all_tumors.csv')
 TUMOR_STATS = os.path.join(os.environ.get("KPTRACER_DATA", os.path.expanduser("~/KPTracer-Data")), 'tumor_statistics.tsv')
 TREES_DIR = os.path.join(os.environ.get("KPTRACER_DATA", os.path.expanduser("~/KPTracer-Data")), 'trees')
-PLOT_DIR = os.path.join(REPO, 'output', 'figures')
+PLOT_DIR = os.path.join(REPO, 'output', 'quality_plots')  # diagnostic plots, not in the paper
 os.makedirs(PLOT_DIR, exist_ok=True)
 
 # ── Config ──
