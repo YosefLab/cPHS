@@ -1,5 +1,5 @@
 tumor,method,rep,parsimony,seed,matched,cPHS
-3519_Lkb1_T1_Fam,maxcut,,836,19.0,True,0.2673898956227651
+3519_Lkb1_T1_Fam,maxcut,,836,1056.0,True,0.4858612255745678
 3519_Lkb1_T1_Fam,smj,,933,0.0,True,
 3519_Lkb1_T1_Fam,spectral,,1255,,True,3.1512454983113734e-14
 3519_Lkb1_T1_Fam,spectral_greedy,,1174,0.0,True,
