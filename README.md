@@ -99,9 +99,9 @@ Spectral Greedy reconstructions and the five random trees, as Newick with branch
 (produced by `kptracer/save_kp_trees.py`). Inner-node states are not stored in Newick; they are
 determined by small maximum parsimony on the character matrix (`cphs.prepare_tree`).
 
-The Cassiopeia and Neighbor Joining trees are those deposited by Yang et al. (2022)
-(`KPTracer-Data/trees/{tumor}_tree.nwk` and `neighbor_joining/{tumor}_tree_nj.processed.tree`)
-and are not duplicated here. The perturbed trees of the NNI analysis are in `results/nni_v2/`.
+The Cassiopeia (`cassiopeia.nwk`) and Neighbor Joining (`nj.nwk`) trees are those published by Yang et al. (2022)
+(`KPTracer-Data/trees/`), copied here for convenience; the NJ trees with internal node labels removed, as scored.
+The perturbed trees of the NNI analysis are in `results/nni_v2/`.
 
 ## Implementation notes
 
