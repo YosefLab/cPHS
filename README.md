@@ -37,7 +37,9 @@ conda activate cass
 Cassiopeia 3.0 no longer includes four of the six reconstruction methods compared in the paper
 (MaxCut, Shared-Mutation-Joining, Spectral and Spectral Greedy), and moved the branch-length estimator
 used here (`IIDExponentialMLE`) to the separate ConvexML package. The analysis therefore requires
-Cassiopeia 2.1.0, as in the environment above.
+Cassiopeia 2.1.0, as in the environment above. The cPHS score itself does not depend on any of the
+removed functionality: it needs only a tree with node times and inner-node states, whichever method
+built it. In Cassiopeia 3.0 it is available as `calculate_cPHS`.
 
 ## Data
 
