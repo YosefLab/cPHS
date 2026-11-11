@@ -112,8 +112,7 @@ The perturbed trees of the NNI analysis are in `results/nni_v2/`.
   on the NumPy random state, so `save_kp_trees.py` seeds it and searches seeds until the tree's
   parsimony equals the value in `merged_all_tumors.csv`, and records the seed. For SMJ and the
   spectral solvers the variation is not controlled by seeding; their trees are deposited as
-  regenerated. Trees whose parsimony differs from the scored tree are listed in
-  `trees/unmatched.csv`, with their recomputed cPHS and whether the accept/reject decision changes.
+  regenerated.
 * **Random trees** are fully reproducible (`random.seed(r)`, $r = 0, \ldots, 4$).
 * **Calibration, $\varepsilon$.** The cutoff printed as 0.67 in Tables S1 to S4 is $2/3$ exactly.
 * **Rounding in Tables S1 to S4.** The published values were rounded by hand from three-decimal
