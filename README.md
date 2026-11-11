@@ -34,8 +34,10 @@ conda env create -f environment.yml
 conda activate cass
 ```
 
-Cassiopeia 3.0 moved the branch-length estimator used here (`IIDExponentialMLE`) to the separate
-ConvexML package and changed several solvers, so use the environment above to reproduce the paper.
+Cassiopeia 3.0 no longer includes four of the six reconstruction methods compared in the paper
+(MaxCut, Shared-Mutation-Joining, Spectral and Spectral Greedy), and moved the branch-length estimator
+used here (`IIDExponentialMLE`) to the separate ConvexML package. The analysis therefore requires
+Cassiopeia 2.1.0, as in the environment above.
 
 ## Data
 
