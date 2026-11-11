@@ -108,7 +108,10 @@ The perturbed trees of the NNI analysis are in `results/nni_v2/`.
 * **Collision probability.** The deposited indel priors do not sum to one per site. They are
   normalized per site, $q_i = \sum_j q_{ij}^2$ is computed for each site, and $q$ is the mean over sites.
 * **Stochastic solvers.** In Cassiopeia 2.1.0, MaxCut, SMJ and the spectral solvers are stochastic;
-  the MaxCut seed of each deposited tree is recorded in `trees/<tumor>/parsimony.csv`.
+  the MaxCut seed of each deposited tree is recorded in `trees/<tumor>/parsimony.csv`. Rerunning these
+  solvers can therefore give trees that differ slightly from the deposited ones, with correspondingly
+  small differences in their scores. To reproduce the paper's values, score the deposited trees
+  (`examples/score_one_tree.py`).
 * **Random trees** are fully reproducible (`random.seed(r)`, $r = 0, \ldots, 4$).
 * **Calibration, $\varepsilon$.** The cutoff printed as 0.67 in Tables S1 to S4 is $2/3$ exactly.
 * **Rounding in Tables S1 to S4.** The published values were rounded by hand from three-decimal
