@@ -1,7 +1,7 @@
 tumor,method,rep,parsimony,seed,matched,cPHS
 3432_NT_T2,maxcut,,409,337.0,True,0.722654493230051
 3432_NT_T2,smj,,461,0.0,True,
-3432_NT_T2,spectral,,572,0.0,False,4.709843457504459e-05
+3432_NT_T2,spectral,,571,,True,4.709843457504459e-05
 3432_NT_T2,spectral_greedy,,554,0.0,True,
 3432_NT_T2,random,0.0,1944,,,
 3432_NT_T2,random,1.0,1965,,,
