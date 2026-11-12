@@ -1,7 +1,7 @@
 tumor,method,rep,parsimony,seed,matched,cPHS
 3454_Lkb1_T3,maxcut,,171,22.0,True,1.0
 3454_Lkb1_T3,smj,,184,0.0,True,
-3454_Lkb1_T3,spectral,,259,0.0,False,0.0045381658249015
+3454_Lkb1_T3,spectral,,254,,True,0.0045377116025745
 3454_Lkb1_T3,spectral_greedy,,211,0.0,True,
 3454_Lkb1_T3,random,0.0,3118,,,
 3454_Lkb1_T3,random,1.0,2949,,,
