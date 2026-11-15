@@ -1,5 +1,5 @@
 tumor,method,rep,parsimony,seed,matched,cPHS
-3508_Apc_T2,maxcut,,190,17.0,True,0.1763201925200028
+3508_Apc_T2,maxcut,,190,,True,0.1763201925200028
 3508_Apc_T2,smj,,209,0.0,True,
 3508_Apc_T2,spectral,,285,0.0,True,
 3508_Apc_T2,spectral_greedy,,289,0.0,True,
