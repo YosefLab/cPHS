@@ -5,8 +5,8 @@ Code and data for the paper
 > Zilber, Prillo, Neumeier, Yosef, Nadler. *Can you trust your reconstructed lineage tree?
 > A homoplasy-based approach for irreversible evolution.*
 
-This repository contains the implementation of the cPHS score and the analysis of the KPTracer
-lung adenocarcinoma data (Section 6 and Appendices L to P).
+This repository contains the implementation of the cPHS score, the simulations of Section 4, and
+the analysis of the KPTracer lung adenocarcinoma data (Section 6 and Appendices L to P).
 A maintained implementation of cPHS is being integrated into
 [Cassiopeia](https://github.com/YosefLab/Cassiopeia) (`calculate_cPHS`, PR #289).
 The code here is the exact code that produced the numbers in the paper.
@@ -17,6 +17,7 @@ The code here is the exact code that produced the numbers in the paper.
 |---|---|
 | `cphs/` | The cPHS score (`core.py`): pairwise homoplasy counts, the cPHS test statistic, estimation of $\lambda$ and $q$, and tree preprocessing |
 | `examples/` | Minimal example: score one tumor's tree |
+| `simulations/` | Simulations of Section 4 (Figures 1 to 5): ground-truth trees, reconstructions by seven solvers, scores, and the plotting scripts (see `simulations/README.md`) |
 | `kptracer/` | KPTracer pipeline: reconstructions with six algorithms, random trees and scores (`kp_phs_all.py`), the tree deposit (`save_kp_trees.py`), NNI perturbation (`nni_analysis_v2.py`), number of mutated states per site (`count_states.py`) |
 | `calibration/` | Threshold-calibration simulations (Appendix M), their outputs (`calibration/results/`), and the script reproducing Tables S1 to S4 |
 | `figures/` | One script per figure or table of Section 6 and Appendices L to P (see the table below) |
@@ -36,10 +37,10 @@ conda activate cass
 
 Cassiopeia 3.0 no longer includes four of the six reconstruction methods compared in the paper
 (MaxCut, Shared-Mutation-Joining, Spectral and Spectral Greedy), and moved the branch-length estimator
-used here (`IIDExponentialMLE`) to the separate ConvexML package. The analysis therefore requires
+used here (`IIDExponentialMLE`) to the separate ConvexML package. The full analysis therefore requires
 Cassiopeia 2.1.0, as in the environment above. The cPHS score itself does not depend on any of the
-removed functionality: it needs only a tree with node times and inner-node states, whichever method
-built it. In Cassiopeia 3.0 it is available as `calculate_cPHS`.
+removed functionality: it needs only a tree and inner-node states, whichever method
+built it. In Cassiopeia 3.0 the cPHS score function is available as `calculate_cPHS`.
 
 ## Data
 
@@ -68,6 +69,7 @@ python examples/score_one_tree.py --data ~/KPTracer-Data --tumor 3467_Lkb1_T1 --
 | Paper item | Script | Input |
 |---|---|---|
 | **All figures and tables below, in one run** | `figures/make_all.sh` | `results/`, `calibration/results/` |
+| Figs 1 to 5 (simulations of Section 4) | `simulations/reproduce_figures.py` | simulated by the script; see `simulations/README.md` (not part of `figures/make_all.sh`) |
 | Section 6, all KP numbers | `kptracer/kp_phs_all.py` | KPTracer data, produces `results/merged_all_tumors.csv` |
 | Section 6, number of mutated states $m$ | `kptracer/count_states.py` | KPTracer priors, produces `results/m_states/` |
 | Fig 6 (method ranking) | `figures/regen_02.py` | `results/merged_all_tumors.csv` |
@@ -153,12 +155,17 @@ The full analysis, in order:
 5. **Threshold calibration** (Appendix M):
    `python calibration/threshold_simulation.py --n <n> --k <k> --reps 100 --output <file>` for each
    configuration, then `python calibration/tables_S1_S4.py calibration/results`.
-6. **Figures and tables**: `bash figures/make_all.sh` regenerates all figures (300 dpi) and tables of
+6. **Simulations of Section 4** (Figures 1 to 5): `python simulations/reproduce_figures.py`
+   (10 realizations per setting; `--reps 1000` as in the paper), writing to `output/figures/`.
+   These do not use the KPTracer data. Options, settings and output columns are described in
+   `simulations/README.md`.
+7. **Figures and tables**: `bash figures/make_all.sh` regenerates all figures (300 dpi) and tables of
    Section 6 and Appendices L to P from `results/`, into `output/figures/` and `output/tables/`;
    each script can also be run on its own (see the table above).
 
-Steps 1 to 5 are slow; steps 6 and the table scripts run in seconds to minutes from the deposited
-results, so the paper's figures and tables can be reproduced without rerunning the pipeline.
+Steps 1 to 6 are slow; step 7 and the table scripts run in seconds to minutes from the deposited
+results, so the paper's figures and tables of Section 6 and the appendices can be reproduced without
+rerunning the pipeline.
 
 ## Citation
 
